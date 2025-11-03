@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 @Entity @Getter @Setter
 public class Producto {
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @DescriptionsList
+    Autor autor;
+
     @Id @Column(length=9)
     int numero;
 
@@ -30,4 +34,5 @@ public class Producto {
 
     @TextArea // Esto es para un texto grande, se usará un área de texto o equivalente
     String observaciones;
+
 }
